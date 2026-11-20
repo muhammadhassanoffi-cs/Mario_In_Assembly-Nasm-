@@ -1,16 +1,20 @@
 
-bits 16
-org 100h
+%include "consts.inc"
 
-start:
-    mov ax, 0013h       ; graphics mode on
-    int 10h
+SetVideoMode:  ; to set to video mode 
 
-    mov ah, 00h         ; wait for a key
-    int 16h
+push ax
+mov ax, 0013h
+int 10h
+pop ax
+ret 
 
-    mov ax, 0003h       ; text mode back
-    int 10h
 
-    mov ah, 4Ch         ; exit to DOS
-    int 21h
+RestoreTextMode:
+push ax 
+mov ax , 0003h
+int 10h
+pop ax
+
+ret
+
