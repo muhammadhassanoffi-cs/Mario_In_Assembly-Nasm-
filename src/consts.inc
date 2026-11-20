@@ -5,3 +5,5 @@ VIDEO_SEGMENT       equ 0A000h
 
 VIDEO_MODE_GRAPHICS equ 0013h
 VIDEO_MODE_TEXT     equ 0003h
+FRAME_PARAS  equ 0FA0h      ; 64000 bytes / 16 = 4000 paragraphs
+FRAME_WORDS  equ 32000      ; 64000 bytes / 2
